@@ -68,13 +68,14 @@ env['CPPPATH'].append(os.getcwd())
 env['CPPPATH'].append(os.getcwd() + "/gtest/include")
 env['CPPPATH'].append(os.getcwd() + "/gtest")
 env['CPPPATH'].append(os.getcwd() + "/solutions")
+env['CPPPATH'].append(os.getcwd() + "/superstl")
 env['CPPPATH'].append(os.getcwd() + "/tests")
 
 env.Append(CXXFLAGS = ' -O0 -g')
 Export('env')
 
 # List of subdirectories where we have source code
-dirs = ['solutions','gtest','tests']
+dirs = ['solutions','gtest','tests','superstl']
 
 # 1. Configure superstl
 # stl_env = base_env.Clone()

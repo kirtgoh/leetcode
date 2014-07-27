@@ -11,17 +11,16 @@
 
 using namespace std;
 
+struct TreeNode
+{
+  int val;
+  TreeNode *left;
+  TreeNode *right;
+  TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+};
+
 class BinaryTree
 {
-protected:
-  struct TreeNode
-  {
-    int val;
-    TreeNode *left;
-    TreeNode *right;
-    TreeNode(int x) : val(x), left(NULL), right(NULL) {}
-  };
-
 public:
   // constructor
   BinaryTree():root(NULL) {} 
@@ -31,13 +30,14 @@ public:
   void storeBinaryTree(ofstream &out);
   void printTree();                     // Print binary tree pretty
 
+  // filed
+  TreeNode *root;       // make it public, for test convenience
+
 private:
   // functions
   void serialize(TreeNode *p, ofstream &out);
   void deserialize(TreeNode *&p, ifstream &in);
   void printPostorder(TreeNode *p, int indent);
-  // filed
-  TreeNode *root;
 
 };
 

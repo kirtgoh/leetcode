@@ -1,12 +1,12 @@
 # SConscript for superstl subdirectory                                                                                                                                                                                                      
 
 # Import envrionment
-Import('stl_env')
+Import('env')
 
 # Now get list of .cpp files
 src_files = Glob('*.cpp')
 
-objs = stl_env.Object(src_files)
+objs = env.Object(src_files)
 
 Return('objs')
 
