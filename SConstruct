@@ -92,7 +92,7 @@ dirs = ['solutions','gtest','tests','superstl']
 # , lib/gtest and tests folders are included
 tobjs = []
 for dir in dirs:
-    o = SConscript('%s/SConscript' % dir)
+    o = SConscript('%s/SConscript' % dir, variant_dir='build/%s' % dir, duplicate=0)
     if type(o) == list:
         tobjs.append(o[0])
     else:

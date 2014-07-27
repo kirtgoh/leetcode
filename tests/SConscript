@@ -19,7 +19,6 @@ Import('env')
 #
 # Now get list of .cpp files
 src_files = Glob('*.cpp')
-src_files.remove(File('main.cpp'))
 #
 # atomcore_o = test_env.Object('atomcore-test.cpp')
 # env.Depends(atomcore_o, '../core/atom-core/atomcore.cpp')
