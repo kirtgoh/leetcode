@@ -7,7 +7,8 @@
 #ifndef BINTREE_H
 #define BINTREE_H
 
-#include <fstream>
+#include <iostream>
+#include <queue>
 
 using namespace std;
 
@@ -26,19 +27,26 @@ public:
   BinaryTree():root(NULL) {} 
 
   // functions
-  void buildBinaryTree(ifstream &in);   // Build binary tree form file
-  void storeBinaryTree(ofstream &out);
+  void buildBinaryTree(istream &in);   // Build binary tree form file
+  void storeBinaryTree(ostream &out);
   void printTree();                     // Print binary tree pretty
+  int maxDepth(TreeNode *root);         // slu-2: Maximum_Depth_of_Binary_tree
 
+  void printLevel(TreeNode *root);
+  void printLevel2(TreeNode *root);     // one queue impel
+  void printPretty(TreeNode *root, int level, int indent, ostream& out);
   // filed
   TreeNode *root;       // make it public, for test convenience
 
 private:
   // functions
-  void serialize(TreeNode *p, ofstream &out);
-  void deserialize(TreeNode *&p, ifstream &in);
+  void serialize(TreeNode *p, ostream &out);
+  void deserialize(TreeNode *&p, istream &in);
   void printPostorder(TreeNode *p, int indent);
 
+  void printBranches(int len, int span, int start, int numNodes, const deque<TreeNode *>& queue, ostream& out);
+  void printNodes(int len, int span, int start, int numNodes, const deque<TreeNode *>& queue, ostream& out);
+  void printLeaves(int indent, int level, int numNodes, const deque<TreeNode *>& queue, ostream& out);
 };
 
 #endif /* BINTREE_H */

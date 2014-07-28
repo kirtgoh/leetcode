@@ -62,6 +62,7 @@ else:
 env = base_env.Clone()
 env.Decider('MD5-timestamp')
 
+env['CXXFLAGS'] = '-std=c++0x' # to_string
 env['CPPPATH'] = []
 env['CPPPATH'].append(os.getcwd())
 # Add gtest directory in CPPPATH

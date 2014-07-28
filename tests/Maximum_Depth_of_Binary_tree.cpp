@@ -2,6 +2,7 @@
 
 #include <Maximum_Depth_of_Binary_tree.h>
 #include <PrintMacros.h>
+#include <fstream>
 
 class BinaryTreeDepthTest : public :: testing :: Test
 {
