@@ -31,17 +31,17 @@ public:
   }
 };
 
-TEST_F(BinaryTreeTest, printLevel)
-{
-  bt.printLevel(bt.root);
-}
-
-TEST_F(BinaryTreeTest, printLevel2)
-{
-  bt.printLevel2(bt.root);
-}
-
+// TEST_F(BinaryTreeTest, printLevel)
+// {
+//   bt.printLevel(bt.root);
+// }
+//
+// TEST_F(BinaryTreeTest, printLevel2)
+// {
+//   bt.printLevel2(bt.root);
+// }
+//
 TEST_F(BinaryTreeTest, printPretty)
 {
-  bt.printPretty(bt.root, 1, 0, std::cout);
+  bt.printPretty(bt.root, 1, 12, std::cout);
 }
