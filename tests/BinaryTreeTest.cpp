@@ -9,7 +9,7 @@ class BinaryTreeTest : public :: testing :: Test
 public:
   BinaryTree bt;
   ifstream infile;
-  ofstream outfile;
+  // ofstream outfile;
 
   BinaryTreeTest ()
   {
@@ -17,17 +17,17 @@ public:
     if (!infile.is_open())
       ERROR("file is not opened!");
 
-    outfile.open("files/pretty.file");
-    if (!outfile.is_open())
-      ERROR("file is not opened!");
-
+    // outfile.open("files/pretty.file");
+    // if (!outfile.is_open())
+    //   ERROR("file is not opened!");
+    //
     bt.buildBinaryTree(infile);
   }
 
   void TearDown()
   {
     infile.close();
-    outfile.close();
+    // outfile.close();
   }
 };
 
