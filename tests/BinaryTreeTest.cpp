@@ -43,5 +43,5 @@ public:
 //
 TEST_F(BinaryTreeTest, printPretty)
 {
-  bt.printPretty(bt.root, 1, 12, std::cout);
+  // bt.printPretty(bt.root, 1, 12, std::cout);
 }
