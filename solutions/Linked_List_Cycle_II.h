@@ -35,32 +35,33 @@ public:
 
 ListNode *Solution::detectCycle(ListNode *head)
 {
-  if (!head || !head->next) return NULL;
-
   ListNode *slow = head;
   ListNode *fast = head;
 
+  bool hasCycle = false;
   while(fast && fast->next)
   {
     slow = slow->next;
     fast = fast->next->next;
     if (slow == fast)
+    {
+      hasCycle = true;
       break;
+    }
   }
 
-  // No ring exist
-  if (slow != fast) return NULL;
-
-  slow = head;
-  while (slow != fast)
+  // Ring exists
+  if (hasCycle)
   {
-    slow = slow->next;
-    fast = fast->next;
+    slow = head;
+    while (slow != fast)
+    {
+      slow = slow->next;
+      fast = fast->next;
+    }
+    return slow;
   }
-
-  return slow;
-
+  return NULL;
 }
 
 #endif /* LIST_CYCLE_II_H */
-
