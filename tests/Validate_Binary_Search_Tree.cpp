@@ -3,16 +3,16 @@
 #include <fstream>
 
 #include <bintree.h>
-#include <Recover_Binary_Search_Tree.h>
+#include <Validate_Binary_Search_Tree.h>
 
-class RecoverBST: public :: testing :: Test
+class ValidateBST: public :: testing :: Test
 {
 public:
 	Solution slu;
   BinaryTree bt;
   ifstream infile;
 
-  RecoverBST()
+  ValidateBST()
   {
     infile.open("files/preorder.file");
     if (!infile.is_open())
@@ -27,11 +27,10 @@ public:
   }
 };
 
-TEST_F(RecoverBST, isBalanced)
+TEST_F(ValidateBST, isValidBST)
 {
   // bt.printPretty(bt.root, 1, 12, std::cout);
-	// slu.recoverTree(bt.root);
-  // bt.printPretty(bt.root, 1, 12, std::cout);
+	ASSERT_EQ(slu.isValidBST(bt.root), true);
 }
 
 
